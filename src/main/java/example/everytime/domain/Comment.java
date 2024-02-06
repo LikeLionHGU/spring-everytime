@@ -7,9 +7,7 @@ import lombok.Getter;
 @Getter
 public class Comment extends BaseTime {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long commentId;
+
 
   private String content;
   private int likeCount;
@@ -21,4 +19,5 @@ public class Comment extends BaseTime {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "post_id")
   private Post post;
+
 }
